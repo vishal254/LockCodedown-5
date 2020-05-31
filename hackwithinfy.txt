@@ -1,0 +1,33 @@
+def good_string(s):
+    freq = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in s:
+        v = ord(i)
+        if(v>= 65 and v <= 90):
+            freq[v - ord('A')] += 1
+            continue
+        if(v >= 97 and v <= 122):
+            freq[v - ord('a')] += 1
+            continue
+    for i in "HackerEarth":
+        v = ord(i)
+        if(v>= 65 and v <= 90):
+            freq[v - ord('A')] -= 1
+            continue
+        if(v >= 97 and v <= 122):
+            freq[v - ord('a')] -= 1
+            continue
+    for i in range(26):
+        if(freq[i] < 0):
+            return False
+    return True
+s = input()
+n = int(input())
+for i in range(n):
+    l, r = map(int, input().split())
+    print(l, r)
+    count = 0
+    while(r - l >= 10):
+        if(good_string(s[l-1:r])):
+            count += 1
+        l += 1
+    print(count)
