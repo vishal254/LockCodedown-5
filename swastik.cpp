@@ -4,8 +4,7 @@ using namespace std;
 int main() {
 	// ----------- Uncomment below code to write output to file (cout.txt)
 	// fstream file; 
-    // file.open("cout.txt", ios::out); 
-    // string line; 
+    // file.open("cout.txt", ios::out);  
   
     // // Backup streambuffers of  cout 
     // streambuf* stream_buffer_cout = cout.rdbuf(); 
